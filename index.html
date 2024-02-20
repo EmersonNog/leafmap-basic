@@ -213,34 +213,43 @@
         function pop_Barragem_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
+                        <td><strong>ID:</strong></td>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>NOME:</strong></td>\
                         <td colspan="2">' + (feature.properties['nome'] !== null ? autolinker.link(feature.properties['nome'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>LOCALIZAÇÃO:</strong></td>\
                         <td colspan="2">' + (feature.properties['endereco'] !== null ? autolinker.link(feature.properties['endereco'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>CATEGORIA DE RISCO:</strong></td>\
                         <td colspan="2">' + (feature.properties['risco'] !== null ? autolinker.link(feature.properties['risco'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>DANO POTENCIAL ASSO.:</strong></td>\
                         <td colspan="2">' + (feature.properties['dano_poten'] !== null ? autolinker.link(feature.properties['dano_poten'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>BACIA HIDROGRÁFICA:</strong></td>\
                         <td colspan="2">' + (feature.properties['bacia_hidr'] !== null ? autolinker.link(feature.properties['bacia_hidr'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>ÓRGÃO:</strong></td>\
                         <td colspan="2">' + (feature.properties['orgao'] !== null ? autolinker.link(feature.properties['orgao'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>TIPO:</strong></td>\
                         <td colspan="2">' + (feature.properties['tipo'] !== null ? autolinker.link(feature.properties['tipo'].toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
+                        <td><strong>CAPACIDADE (hm³):</strong></td>\
                         <td colspan="2">' + (feature.properties['capacidade'] !== null ? autolinker.link(feature.properties['capacidade'].toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
-            layer.bindPopup(popupContent, {maxHeight: 400});
+            layer.bindPopup(popupContent, {maxHeight: 500});
             var popup = layer.getPopup();
             var content = popup.getContent();
             var updatedContent = removeEmptyRowsFromPopupContent(content, feature);
